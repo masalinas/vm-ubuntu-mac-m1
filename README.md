@@ -33,16 +33,45 @@ One important it's deactivate the net adapter during the installation because if
 Start the vm and install the Ubuntu 20.04 server. We must select the server name default user and password, keyboard language and hard disk. Finally the iso device will unattached and wen start we must deactivate the CD/DVD device and select the hard disk like default one to start our new vm installed. Also we must to activate the net adapter again.
 
 - **Step07:**<br>
+Before install anything, we must to select the **bridge adapter** to avoid problems with certificates
+
+![VM bridge net adapter](captures/vm_net_bridgth_adapter.png "VM bridge net adapter")
+
+- **Step08:**<br>
 After start our vm we install the Desktop
 
 ```sh
 sudo apt-get update
 sudo apt install ubuntu-desktop
 ```
-- **Step08:**<br>
+- **Step09:**<br>
 Other tools could be ifconfig and Chromium because Google Chrome not exist yet for ubuntu arm architecture
 
 ```sh
 sudo apt install net-tools
 sudo apt install chromium-browser
+```
+
+- **Step10:**<br>
+If with have some problems with the hard disk size installed, we could resize it from this link
+
+- **Step11:**<br>
+Install Open VM tools.
+
+**Install Open Vm Tools package**
+With this VMWare packages the
+
+![VMware extension tools](captures/vm_tools.png "VMware extension tools")
+
+```sh
+wget http://ports.ubuntu.com/pool/universe/o/open-vm-tools/open-vm-tools_11.3.0-2ubuntu0~ubuntu20.04.2_arm64.deb
+
+sudo apt install ./open-vm-tools_11.3.0-2ubuntu0~ubuntu20.04.2_arm64.deb
+```
+
+**Open Vm Tools Desktop package**
+```sh
+wget http://ports.ubuntu.com/pool/universe/o/open-vm-tools/open-vm-tools-desktop_11.3.0-2ubuntu0~ubuntu20.04.2_arm64.deb
+
+sudo apt install ./open-vm-tools-desktop_11.3.0-2ubuntu0~ubuntu20.04.2_arm64.deb
 ```
